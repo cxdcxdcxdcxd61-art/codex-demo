@@ -4,12 +4,16 @@ const navLinks = document.querySelector('.nav-links');
 const revealElements = document.querySelectorAll('.reveal');
 const toast = document.querySelector('.flavor-toast');
 const contactForm = document.querySelector('.contact-form');
+const parallaxLayer = document.querySelector('.parallax-layer');
+const magneticElements = document.querySelectorAll('.magnetic');
 const flavorNotes = {
-  'Midnight Blend': 'Midnight Blend：黑巧克力、熟莓、焦糖榛果，适合意式浓缩与燕麦奶。',
-  'Velvet Ethiopia': 'Velvet Ethiopia：伯爵茶、柑橘皮、茉莉花香，建议 92°C 手冲。',
-  'Obsidian Reserve': 'Obsidian Reserve：朗姆酒渍葡萄、可可碎、烟熏橡木，限量珍藏。'
+  'Midnight Blend': 'Midnight Blend：黑可可、熟莓、焦糖榛果；中深慢烘，适合浓缩与夜间拿铁。',
+  'Ethiopia Reserve': 'Ethiopia Reserve：茉莉、柑橘皮、蜂蜜红茶；浅中烘，建议 92°C 手冲。',
+  'Velvet Espresso': 'Velvet Espresso：烤杏仁、可可脂、深色糖浆；深烘浓缩曲线，呈现金色 crema。'
 };
 let toastTimer;
+let latestScrollY = 0;
+let ticking = false;
 
 function updateHeader() {
   header.classList.toggle('scrolled', window.scrollY > 24);
@@ -27,7 +31,14 @@ function showToast(message) {
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => {
     toast.classList.remove('show');
-  }, 3200);
+  }, 3600);
+}
+
+function updateParallax() {
+  if (parallaxLayer) {
+    parallaxLayer.style.transform = `scale(1.08) translate3d(0, ${latestScrollY * 0.14}px, 0)`;
+  }
+  ticking = false;
 }
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -37,7 +48,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.16 });
+}, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
 
 revealElements.forEach((element) => revealObserver.observe(element));
 
@@ -57,12 +68,35 @@ document.querySelectorAll('[data-product]').forEach((button) => {
   });
 });
 
+magneticElements.forEach((element) => {
+  element.addEventListener('mousemove', (event) => {
+    const rect = element.getBoundingClientRect();
+    const x = (event.clientX - rect.left - rect.width / 2) * 0.12;
+    const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
+    element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  });
+
+  element.addEventListener('mouseleave', () => {
+    element.style.transform = '';
+  });
+});
+
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const status = contactForm.querySelector('.form-status');
-  status.textContent = '已收到信息。NOIRÉ 品牌顾问将在一个工作日内与你联系。';
+  status.textContent = '预约已收到。NOIRÉ 品牌顾问将在一个工作日内确认你的私享品鉴时段。';
   contactForm.reset();
 });
 
-window.addEventListener('scroll', updateHeader, { passive: true });
+window.addEventListener('scroll', () => {
+  latestScrollY = window.scrollY;
+  updateHeader();
+
+  if (!ticking) {
+    window.requestAnimationFrame(updateParallax);
+    ticking = true;
+  }
+}, { passive: true });
+
 updateHeader();
+updateParallax();

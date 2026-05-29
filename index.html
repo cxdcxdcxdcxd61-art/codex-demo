@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIRÉ Coffee | 高级精品咖啡</title>
+  <meta name="description" content="NOIRÉ Coffee 高级精品咖啡品牌官网，探索深色极简美学、单品咖啡与品牌故事。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="navbar" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="NOIRÉ Coffee 首页">
+        <span class="brand-mark">N</span>
+        <span>NOIRÉ</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#products">产品</a>
+        <a href="#story">故事</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" role="img" aria-label="深色背景中的精品咖啡杯与咖啡豆"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Specialty Coffee Atelier</p>
+        <h1 id="hero-title">把夜色，萃成一杯有层次的咖啡。</h1>
+        <p class="hero-copy">NOIRÉ 以极简深色美学与严苛烘焙曲线，呈现可可、黑莓、焦糖与烟熏木质香交织的高级精品咖啡体验。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#products">探索甄选</a>
+          <a class="button ghost" href="#story">了解品牌</a>
+        </div>
+      </div>
+      <div class="hero-card reveal" aria-label="本季主推咖啡信息">
+        <span>Seasonal Signature</span>
+        <strong>Midnight Blend</strong>
+        <p>低温慢烘 · 深莓果酸 · 黑巧余韵</p>
+      </div>
+    </section>
+
+    <section class="section products" id="products" aria-labelledby="products-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Curated Selection</p>
+        <h2 id="products-title">产品展示</h2>
+        <p>精选三款不同风味走向的咖啡豆，从清晨手冲到夜晚浓缩，都保持清晰、克制而奢华的味觉表达。</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card reveal">
+          <div class="product-visual visual-one"></div>
+          <div class="product-info">
+            <span>Blend 01</span>
+            <h3>Midnight Blend</h3>
+            <p>黑巧克力、熟莓、焦糖榛果。适合意式浓缩与奶咖。</p>
+            <button class="text-button" type="button" data-product="Midnight Blend">查看风味</button>
+          </div>
+        </article>
+        <article class="product-card reveal">
+          <div class="product-visual visual-two"></div>
+          <div class="product-info">
+            <span>Single Origin</span>
+            <h3>Velvet Ethiopia</h3>
+            <p>伯爵茶、柑橘皮、茉莉花香。适合手冲与冰滤。</p>
+            <button class="text-button" type="button" data-product="Velvet Ethiopia">查看风味</button>
+          </div>
+        </article>
+        <article class="product-card reveal">
+          <div class="product-visual visual-three"></div>
+          <div class="product-info">
+            <span>Reserve</span>
+            <h3>Obsidian Reserve</h3>
+            <p>朗姆酒渍葡萄、可可碎、烟熏橡木。限量珍藏批次。</p>
+            <button class="text-button" type="button" data-product="Obsidian Reserve">查看风味</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="story-image reveal" role="img" aria-label="咖啡师在深色吧台上制作咖啡"></div>
+      <div class="story-content reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2 id="story-title">品牌故事</h2>
+        <p>NOIRÉ 诞生于一间只在夜晚开灯的烘焙工作室。我们相信，高级感不是堆叠装饰，而是将产地、烘焙、研磨与萃取的每一次选择都保持精准。</p>
+        <p>从埃塞俄比亚高海拔小农批次，到中南美洲庄园级处理法，我们以小批量烘焙保留风土层次，并以深色极简视觉，让咖啡本身成为主角。</p>
+        <div class="stats" aria-label="品牌数据">
+          <div>
+            <strong>18</strong>
+            <span>条烘焙曲线</span>
+          </div>
+          <div>
+            <strong>7</strong>
+            <span>个合作产区</span>
+          </div>
+          <div>
+            <strong>96h</strong>
+            <span>新鲜发货</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel reveal">
+        <p class="eyebrow">Visit & Contact</p>
+        <h2 id="contact-title">联系方式</h2>
+        <p>预约品鉴、企业礼盒或精品咖啡豆订阅，请留下你的需求，我们会在一个工作日内回复。</p>
+        <div class="contact-details">
+          <a href="mailto:hello@noire.coffee">hello@noire.coffee</a>
+          <a href="tel:+862160880888">+86 21 6088 0888</a>
+          <span>上海市静安区夜幕路 18 号</span>
+        </div>
+      </div>
+      <form class="contact-form reveal" aria-label="联系表单">
+        <label>
+          姓名
+          <input type="text" name="name" placeholder="你的姓名" required>
+        </label>
+        <label>
+          邮箱
+          <input type="email" name="email" placeholder="name@example.com" required>
+        </label>
+        <label>
+          需求
+          <textarea name="message" rows="4" placeholder="想了解的产品或合作方式" required></textarea>
+        </label>
+        <button class="button primary" type="submit">发送信息</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 NOIRÉ Coffee. Crafted in darkness, refined by taste.</p>
+    <a href="#top">返回顶部</a>
+  </footer>
+
+  <div class="flavor-toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<svg width="1080" height="1600" viewBox="0 0 1080 1600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">黑金奢华咖啡海报</title>
+  <desc id="desc">一张黑金配色的精品咖啡竖版海报，包含金色咖啡杯、咖啡豆、蒸汽、奢华光效与中英文广告文案。</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="43%" r="58%">
+      <stop offset="0%" stop-color="#F8DFA0" stop-opacity="0.48"/>
+      <stop offset="33%" stop-color="#B9822B" stop-opacity="0.22"/>
+      <stop offset="72%" stop-color="#0B0704" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#030201"/>
+    </radialGradient>
+    <linearGradient id="midnight" x1="0" y1="0" x2="1080" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#120C07"/>
+      <stop offset="0.42" stop-color="#050403"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="172" y1="234" x2="905" y2="1388" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF4C6"/>
+      <stop offset="0.18" stop-color="#D8A950"/>
+      <stop offset="0.47" stop-color="#916020"/>
+      <stop offset="0.7" stop-color="#F2CD7B"/>
+      <stop offset="1" stop-color="#7C4B14"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="246" y1="843" x2="834" y2="843" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5F3810"/>
+      <stop offset="0.19" stop-color="#FFE9A9"/>
+      <stop offset="0.5" stop-color="#B77A25"/>
+      <stop offset="0.82" stop-color="#FFF3BE"/>
+      <stop offset="1" stop-color="#5F3810"/>
+    </linearGradient>
+    <linearGradient id="coffee" x1="312" y1="833" x2="768" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1B0D05"/>
+      <stop offset="0.5" stop-color="#5A2B0E"/>
+      <stop offset="1" stop-color="#110803"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.98 0 1 0 0 0.78 0 0 1 0 0.35 0 0 0 0.75 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.22"/>
+      </feComponentTransfer>
+      <feBlend mode="screen" in2="SourceGraphic"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="34" stdDeviation="34" flood-color="#000000" flood-opacity="0.78"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#D8A950" flood-opacity="0.22"/>
+    </filter>
+    <path id="steamPathA" d="M412 740C358 662 445 603 411 526C385 469 323 454 346 381"/>
+    <path id="steamPathB" d="M540 729C480 640 594 582 553 487C525 421 566 360 616 322"/>
+    <path id="steamPathC" d="M674 743C635 687 715 627 687 561C657 492 737 443 713 377"/>
+  </defs>
+
+  <rect width="1080" height="1600" fill="url(#midnight)"/>
+  <rect width="1080" height="1600" fill="url(#halo)" opacity="0.92"/>
+  <rect x="38" y="38" width="1004" height="1524" rx="42" stroke="url(#gold)" stroke-width="3" opacity="0.9"/>
+  <rect x="66" y="66" width="948" height="1468" rx="34" stroke="#F4D58B" stroke-width="1" opacity="0.25"/>
+
+  <g opacity="0.34">
+    <circle cx="174" cy="212" r="2.4" fill="#FFE7A6"/>
+    <circle cx="882" cy="184" r="2" fill="#FFE7A6"/>
+    <circle cx="916" cy="1162" r="2.8" fill="#FFE7A6"/>
+    <circle cx="158" cy="1180" r="2.1" fill="#FFE7A6"/>
+    <circle cx="746" cy="1402" r="1.8" fill="#FFE7A6"/>
+    <circle cx="334" cy="1328" r="1.6" fill="#FFE7A6"/>
+  </g>
+
+  <g opacity="0.42" stroke="#D5A44B" stroke-width="1">
+    <path d="M132 482H318"/>
+    <path d="M762 482H948"/>
+    <path d="M132 1114H318"/>
+    <path d="M762 1114H948"/>
+    <path d="M540 110V224"/>
+    <path d="M540 1378V1492"/>
+  </g>
+
+  <g font-family="'Noto Serif SC', 'Songti SC', 'Microsoft YaHei', serif" text-anchor="middle">
+    <text x="540" y="168" fill="#EBC879" font-size="30" letter-spacing="9">NOIRÉ COFFEE ATELIER</text>
+    <text x="540" y="222" fill="#FFFFFF" font-size="76" font-weight="700" letter-spacing="10">黑金臻萃</text>
+    <text x="540" y="282" fill="#C99A45" font-size="28" letter-spacing="5">LUXURY RESERVE BLEND</text>
+  </g>
+
+  <g filter="url(#softGlow)" opacity="0.58">
+    <use href="#steamPathA" stroke="#FFE2A1" stroke-width="7" stroke-linecap="round" opacity="0.28"/>
+    <use href="#steamPathB" stroke="#FFF0BD" stroke-width="8" stroke-linecap="round" opacity="0.34"/>
+    <use href="#steamPathC" stroke="#FFE2A1" stroke-width="7" stroke-linecap="round" opacity="0.25"/>
+  </g>
+  <g opacity="0.7">
+    <use href="#steamPathA" stroke="#C99039" stroke-width="2" stroke-linecap="round" opacity="0.62"/>
+    <use href="#steamPathB" stroke="#F9DA8A" stroke-width="2.4" stroke-linecap="round" opacity="0.72"/>
+    <use href="#steamPathC" stroke="#C99039" stroke-width="2" stroke-linecap="round" opacity="0.58"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="540" cy="1204" rx="354" ry="64" fill="#000000" opacity="0.62"/>
+    <path d="M266 858C279 1042 343 1182 540 1182C737 1182 801 1042 814 858H266Z" fill="url(#gold)"/>
+    <path d="M296 890C316 1035 372 1128 540 1128C708 1128 764 1035 784 890H296Z" fill="#090503" opacity="0.36"/>
+    <ellipse cx="540" cy="856" rx="294" ry="82" fill="url(#rim)"/>
+    <ellipse cx="540" cy="856" rx="242" ry="50" fill="url(#coffee)"/>
+    <ellipse cx="540" cy="842" rx="207" ry="32" fill="#8B4E16" opacity="0.38"/>
+    <path d="M799 915C904 886 959 935 953 1012C947 1088 877 1135 771 1124" stroke="url(#gold)" stroke-width="43" stroke-linecap="round" opacity="0.92"/>
+    <path d="M808 950C878 931 915 956 911 1008C907 1053 867 1082 790 1077" stroke="#080503" stroke-width="24" stroke-linecap="round" opacity="0.92"/>
+    <path d="M346 930C375 1045 438 1094 540 1094C643 1094 705 1044 734 930" stroke="#FFF0B8" stroke-width="3" opacity="0.34"/>
+    <path d="M313 881C356 910 728 911 770 879" stroke="#FFFFFF" stroke-width="2" opacity="0.34"/>
+  </g>
+
+  <g opacity="0.92" filter="url(#softGlow)">
+    <path d="M388 855C454 833 530 832 594 850" stroke="#FAD77E" stroke-width="6" stroke-linecap="round" opacity="0.68"/>
+    <path d="M598 864C641 854 690 858 728 875" stroke="#FAD77E" stroke-width="4" stroke-linecap="round" opacity="0.52"/>
+  </g>
+
+  <g opacity="0.95">
+    <g transform="translate(156 985) rotate(-18)">
+      <ellipse cx="0" cy="0" rx="42" ry="68" fill="url(#gold)"/>
+      <path d="M-6 -55C11 -16 9 19 -9 56" stroke="#281304" stroke-width="6" stroke-linecap="round" opacity="0.72"/>
+      <ellipse cx="-12" cy="-20" rx="9" ry="18" fill="#FFF0B8" opacity="0.35"/>
+    </g>
+    <g transform="translate(891 706) rotate(24)">
+      <ellipse cx="0" cy="0" rx="36" ry="60" fill="url(#gold)"/>
+      <path d="M-4 -48C12 -12 8 17 -8 49" stroke="#281304" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+      <ellipse cx="-10" cy="-17" rx="8" ry="16" fill="#FFF0B8" opacity="0.33"/>
+    </g>
+    <g transform="translate(246 1290) rotate(32)">
+      <ellipse cx="0" cy="0" rx="31" ry="52" fill="url(#gold)"/>
+      <path d="M-4 -42C10 -8 8 15 -7 43" stroke="#281304" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+    </g>
+  </g>
+
+  <g font-family="'Noto Serif SC', 'Songti SC', 'Microsoft YaHei', serif" text-anchor="middle">
+    <text x="540" y="1308" fill="#FFFFFF" font-size="48" font-weight="700" letter-spacing="5">限定手工慢烘</text>
+    <text x="540" y="1360" fill="#D9AF62" font-size="25" letter-spacing="4">黑可可 · 金色油脂 · 焦糖榛果尾韵</text>
+    <text x="540" y="1428" fill="#F9E4A4" font-size="28" letter-spacing="8">PRIVATE TASTING NIGHT</text>
+    <text x="540" y="1480" fill="#A87B36" font-size="20" letter-spacing="3">扫码预约｜每日 18:00 后供应｜NOIRÉ SHANGHAI</text>
+  </g>
+
+  <g transform="translate(494 493)" opacity="0.94">
+    <circle cx="46" cy="0" r="45" stroke="#F4D58B" stroke-width="2" opacity="0.55"/>
+    <path d="M46 -28L53 -6L76 -6L57 7L65 30L46 16L27 30L35 7L16 -6L39 -6Z" fill="#E7BF68"/>
+  </g>
+
+  <rect width="1080" height="1600" filter="url(#grain)" opacity="0.18"/>
+</svg>

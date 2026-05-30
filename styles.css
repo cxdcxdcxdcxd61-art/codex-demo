@@ -393,6 +393,22 @@ h3 {
   color: var(--muted);
 }
 
+.hero-card-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--gold-bright);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.hero-card-link:hover {
+  color: #fff3c8;
+  text-shadow: 0 0 24px rgba(241, 212, 147, 0.38);
+}
+
 .hero-card-line {
   height: 1px;
   margin-top: 22px;

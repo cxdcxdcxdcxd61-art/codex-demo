@@ -265,9 +265,20 @@ h3 {
   letter-spacing: -0.03em;
 }
 
+.hero-subtitle {
+  max-width: 640px;
+  margin: 28px 0 0;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-shadow: 0 0 34px rgba(241, 212, 147, 0.28);
+}
+
 .hero-lede {
   max-width: 650px;
-  margin: 30px 0 0;
+  margin: 18px 0 0;
   color: var(--muted-strong);
   font-size: clamp(1rem, 1.45vw, 1.22rem);
 }
@@ -531,6 +542,24 @@ h3 {
   border-bottom: 1px solid rgba(241, 212, 147, 0.14);
 }
 
+.note-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.03rem;
+  letter-spacing: 0.035em;
+}
+
+.note-list li span {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  border: 1px solid rgba(255, 231, 168, 0.72);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--gold-bright), var(--gold) 45%, rgba(78, 42, 15, 0.95) 74%);
+  box-shadow: 0 0 22px rgba(241, 212, 147, 0.32);
+}
+
 .profile-card p {
   color: var(--muted-strong);
 }
@@ -549,6 +578,17 @@ h3 {
   border-radius: inherit;
   background: linear-gradient(90deg, #704014, var(--gold-soft), var(--gold-bright));
   box-shadow: 0 0 20px rgba(241, 212, 147, 0.26);
+}
+
+.roast-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: rgba(218, 199, 168, 0.68);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .pricing-section {

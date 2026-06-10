@@ -1,22 +1,22 @@
+// LENS ATELIER interactions: transparent header, mobile navigation, reveal animations, parallax, slider, and contact feedback.
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const revealElements = document.querySelectorAll('.reveal');
-const toast = document.querySelector('.flavor-toast');
-const contactForm = document.querySelector('.contact-form');
 const parallaxLayer = document.querySelector('.parallax-layer');
-const magneticElements = document.querySelectorAll('.magnetic');
-const flavorNotes = {
-  'Midnight Blend': 'Midnight Blend：黑可可、熟莓、焦糖榛果；中深慢烘，适合浓缩与夜间拿铁。',
-  'Ethiopia Reserve': 'Ethiopia Reserve：茉莉、柑橘皮、蜂蜜红茶；浅中烘，建议 92°C 手冲。',
-  'Velvet Espresso': 'Velvet Espresso：烤杏仁、可可脂、深色糖浆；深烘浓缩曲线，呈现金色 crema。'
-};
-let toastTimer;
+const contactForm = document.querySelector('.contact-form');
+const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+const dotsContainer = document.querySelector('.slider-dots');
+const prevButton = document.querySelector('.slider-button.prev');
+const nextButton = document.querySelector('.slider-button.next');
+
+let currentTestimonial = 0;
 let latestScrollY = 0;
 let ticking = false;
+let sliderTimer;
 
 function updateHeader() {
-  header.classList.toggle('scrolled', window.scrollY > 24);
+  header.classList.toggle('scrolled', window.scrollY > 28);
 }
 
 function closeMenu() {
@@ -25,20 +25,31 @@ function closeMenu() {
   menuToggle.setAttribute('aria-expanded', 'false');
 }
 
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add('show');
-  window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3600);
-}
-
 function updateParallax() {
   if (parallaxLayer) {
-    parallaxLayer.style.transform = `scale(1.08) translate3d(0, ${latestScrollY * 0.14}px, 0)`;
+    parallaxLayer.style.transform = `scale(1.06) translate3d(0, ${latestScrollY * 0.12}px, 0)`;
   }
   ticking = false;
+}
+
+function showTestimonial(index) {
+  currentTestimonial = (index + testimonials.length) % testimonials.length;
+
+  testimonials.forEach((testimonial, testimonialIndex) => {
+    testimonial.classList.toggle('active', testimonialIndex === currentTestimonial);
+  });
+
+  dotsContainer.querySelectorAll('button').forEach((dot, dotIndex) => {
+    dot.classList.toggle('active', dotIndex === currentTestimonial);
+    dot.setAttribute('aria-selected', String(dotIndex === currentTestimonial));
+  });
+}
+
+function restartSlider() {
+  window.clearInterval(sliderTimer);
+  sliderTimer = window.setInterval(() => {
+    showTestimonial(currentTestimonial + 1);
+  }, 5200);
 }
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -48,7 +59,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
+}, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
 
 revealElements.forEach((element) => revealObserver.observe(element));
 
@@ -62,29 +73,32 @@ navLinks.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', closeMenu);
 });
 
-document.querySelectorAll('[data-product]').forEach((button) => {
-  button.addEventListener('click', () => {
-    showToast(flavorNotes[button.dataset.product]);
+testimonials.forEach((_, index) => {
+  const dot = document.createElement('button');
+  dot.type = 'button';
+  dot.setAttribute('role', 'tab');
+  dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
+  dot.addEventListener('click', () => {
+    showTestimonial(index);
+    restartSlider();
   });
+  dotsContainer.appendChild(dot);
 });
 
-magneticElements.forEach((element) => {
-  element.addEventListener('mousemove', (event) => {
-    const rect = element.getBoundingClientRect();
-    const x = (event.clientX - rect.left - rect.width / 2) * 0.12;
-    const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
-    element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-  });
+prevButton.addEventListener('click', () => {
+  showTestimonial(currentTestimonial - 1);
+  restartSlider();
+});
 
-  element.addEventListener('mouseleave', () => {
-    element.style.transform = '';
-  });
+nextButton.addEventListener('click', () => {
+  showTestimonial(currentTestimonial + 1);
+  restartSlider();
 });
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const status = contactForm.querySelector('.form-status');
-  status.textContent = '预约已收到。NOIRÉ 品牌顾问将在一个工作日内确认你的私享品鉴时段。';
+  status.textContent = 'Thank you. Your message has been prepared for the studio review.';
   contactForm.reset();
 });
 
@@ -100,3 +114,5 @@ window.addEventListener('scroll', () => {
 
 updateHeader();
 updateParallax();
+showTestimonial(0);
+restartSlider();
